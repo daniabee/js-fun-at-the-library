@@ -27,21 +27,12 @@ module.exports = {
       pronouns : pronouns,
     };
   },
-
-/*  saveReview : function (array, review) {
-    if (array.includes(review) === false) {
-      return array.splice(review.length, 0 , review)
+  
+  saveReview : function (newReview , array) {
+    if (array.includes(newReview) === false) {
+      return array.push(newReview);
     }
-  },*/
-
-  saveReview : function (review, array) {
-      for (var i  = 0; i < array.length; i++) {
-        if (array[i] != review) {
-          array2 = [review];
-          return array2.concat(array)
-        }
-      }
-  },
+},
 
   calculatePageCount : function (title) {
     var count = 0;
@@ -59,10 +50,16 @@ module.exports = {
     };
   },*/
 
+/*  writeBook : function (property,value) {
+    var book = module.exports.book
+    return book.property = value;
+}, */
+
   writeBook : function (property,value) {
-    var book = module.exports.book[property]
-    return book = value;
-},
+    return module.exports.newBook = {
+      property : value ,
+    }
+  },
 
   editBook : function(pageCount) {
     var quarter = pageCount/4;
