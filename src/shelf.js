@@ -5,11 +5,6 @@ function shelfBook (book, shelf) {
   }
 }
 
-/*function unshelfBook (name, shelf) {
-  var index = shelf.indexOf(name);
-  shelf = shelf.splice(index, 1);
-    return shelf
-}*/
 
 function unshelfBook (book, shelf) {
   for (var i = 0; i < shelf.length; i++) {
