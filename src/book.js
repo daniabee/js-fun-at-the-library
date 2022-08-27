@@ -3,8 +3,8 @@ function createTitle(title, additions = null) {
 };
 
 function buildMainCharacter (name, age, pronouns) {
-  return module.exports.newCharcaterBuilt = {
-    name : name ,
+  return newCharcaterBuilt = {
+    name : name,
     age : age,
     pronouns : pronouns,
   }

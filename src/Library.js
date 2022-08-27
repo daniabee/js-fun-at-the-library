@@ -1,19 +1,21 @@
 const {shelfBook, searchShelf, unshelfBook} = require("./shelf");
 
 // Create Library
+
 function createLibrary(name, shelves = null) {
-      var library = {
-      name : name,
-      shelves : {
-        fantasy : [],
-        fiction : [],
-        nonFiction : [],
-      }
+  var library = {
+    name : name,
+    shelves : {
+      fantasy : [],
+      fiction : [],
+      nonFiction : [],
     }
-    return library
-  };
+  }
+  return library
+};
 
 // Create Add book
+
 function addBook (library, book) {
   switch (book.genre) {
     case 'fantasy':
@@ -31,6 +33,7 @@ function addBook (library, book) {
 
 
 // Create check out book
+
 function checkoutBook(library, book, shelf) {
     if (shelf == 'fantasy') {
 
@@ -38,8 +41,7 @@ function checkoutBook(library, book, shelf) {
 
       if (library.shelves.fantasy[i].title == book) {
         library.shelves.fantasy.splice(i, 1)
-        console.log(`You have now checked out ${book} from the Denver Public Library`)
-        return `You have now checked out ${book} from the Denver Public Library`
+        return `You have now checked out ${book} from the ${library.name}`
     }
   }
 }
@@ -49,8 +51,7 @@ function checkoutBook(library, book, shelf) {
     for (var i = 0; i < library.shelves.fiction.length; i++) {
       if (library.shelves.fiction[i].title == book) {
         library.shelves.fiction.splice(i, 1)
-        console.log(`You have now checked out ${book} from the Denver Public Library`)
-        return `You have now checked out ${book} from the Denver Public Library`
+        return `You have now checked out ${book} from the ${library.name}`
     }
   }
 }
@@ -60,13 +61,12 @@ function checkoutBook(library, book, shelf) {
     for (var i = 0; i < library.shelves.nonFiction.length; i++) {
       if (library.shelves.nonFiction[i].title == book) {
         library.shelves.nonFiction.splice(i, 1)
-        console.log(`You have now checked out ${book} from the Denver Public Library`)
-        return `You have now checked out ${book} from the Denver Public Library`
+        return `You have now checked out ${book} from the ${library.name}`
       }
     }
   }
 
-  return `Sorry, there are currently no copies of ${book} available at the Denver Public Library`
+  return `Sorry, there are currently no copies of ${book} available at the ${library.name}`
 
 }
 
@@ -75,6 +75,3 @@ createLibrary,
 addBook,
 checkoutBook
 };
-
-////npm test test/library-test.js
-//.only
